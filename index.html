@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<meta name="description"
+content="Splashes provides swimming lessons, swim programs and water safety education.">
+
+
+<title>Splashes | Home</title>
+
+
+<link rel="stylesheet"
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+<link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+
+<body>
+
+
+<!-- Navigation -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+
+<a class="navbar-brand" href="index.html">
+
+<img src="Graphics/logo-small.png"
+width="120"
+alt="Splashes">
+
+</a>
+
+
+
+<button class="navbar-toggler"
+type="button"
+data-toggle="collapse"
+data-target="#navbarMenu">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+
+
+<div class="collapse navbar-collapse"
+id="navbarMenu">
+
+
+<ul class="navbar-nav ml-auto">
+
+
+<li class="nav-item">
+
+<a class="nav-link" href="index.html">
+Home
+</a>
+
+</li>
+
+
+
+<li class="nav-item">
+
+<a class="nav-link" href="about.html">
+About
+</a>
+
+</li>
+
+
+
+<li class="nav-item">
+
+<a class="nav-link" href="swim-programs.html">
+Programs
+</a>
+
+</li>
+
+
+
+<li class="nav-item">
+
+<a class="nav-link" href="contact.html">
+Contact
+</a>
+
+</li>
+
+
+<li class="nav-item">
+
+<a class="nav-link" href="signin.html">
+Sign In
+</a>
+
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+</nav>
+
+
+
+
+<!-- Hero Section -->
+
+
+<section class="jumbotron text-center">
+
+
+<h1 class="display-4">
+
+Welcome to Splashes
+
+</h1>
+
+
+<p class="lead">
+
+Building confidence through swimming lessons and water safety.
+
+</p>
+
+
+
+<a href="swim-lessons.html"
+class="btn btn-primary">
+
+Learn More
+
+</a>
+
+
+</section>
+
+
+
+
+
+<!-- Vue Component -->
+
+<div id="vueApp"
+class="container text-center">
+
+
+<h2>
+
+{{message}}
+
+</h2>
+
+
+</div>
+
+
+
+
+
+<section class="container">
+
+
+<div class="row">
+
+
+<div class="col-md-4">
+
+
+<h3>
+Swimming Lessons
+</h3>
+
+
+<p>
+
+Professional lessons for children and adults.
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="col-md-4">
+
+
+<h3>
+Swim Programs
+</h3>
+
+
+<p>
+
+Programs designed for different skill levels.
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="col-md-4">
+
+
+<h3>
+Water Safety
+</h3>
+
+
+<p>
+
+Teaching essential water safety skills.
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<footer class="bg-dark text-white text-center p-3 mt-5">
+
+
+<p>
+
+&copy; 2022 Splashes
+
+</p>
+
+
+</footer>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+
+<script>
+
+
+new Vue({
+
+el:"#vueApp",
+
+data:{
+
+
+message:"Making swimmers safer and stronger!"
+
+}
+
+
+});
+
+
+</script>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>
