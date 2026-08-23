@@ -1,0 +1,26 @@
+[
+  {
+    "program": "Parent & Me",
+    "ageGroup": "6 Months - 3 Years",
+    "skillLevel": "Beginner",
+    "schedule": "Tuesday 9:30 AM"
+  },
+  {
+    "program": "Learn To Swim",
+    "ageGroup": "4 - 12 Years",
+    "skillLevel": "Beginner / Intermediate",
+    "schedule": "Saturday 11:00 AM"
+  },
+  {
+    "program": "Competitive Swimming",
+    "ageGroup": "8 - 18 Years",
+    "skillLevel": "Advanced",
+    "schedule": "Saturday 8:00 AM"
+  },
+  {
+    "program": "Adult Swimming",
+    "ageGroup": "18+",
+    "skillLevel": "All Levels",
+    "schedule": "Wednesday 7:00 PM"
+  }
+]

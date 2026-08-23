@@ -1,0 +1,838 @@
+/* ==============================================================
+   SPLASHES — SHARED SITE STYLESHEET
+   Built from the Splashes UI Style Guide + Page Mockups.
+   This file is shared by every page. Page-specific tweaks belong
+   in that page's own <style> block or a small page css file —
+   do not duplicate these rules per page.
+============================================================== */
+
+
+/* ==============================
+   CSS RESET
+============================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body,
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, li,
+figure, blockquote,
+dl, dd {
+    margin: 0;
+    padding: 0;
+}
+
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #ffffff;
+    color: #333333;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    transition: all 0.2s ease;
+}
+
+
+/* ==============================
+   BRAND VARIABLES
+   (values from the Splashes UI Style Guide)
+============================== */
+
+:root {
+    --splash-white: #ffffff;
+    --splash-offwhite: #e4eaea;
+    --splash-navy: #1a2e38;
+    --splash-darkgray: #444444;
+    --splash-gray: #757576;
+    --splash-accent: #03b1f4;
+    --splash-accent-hover: #0d9fde;
+    --splash-accent-light: #bfe9fb;
+}
+
+
+/* ==============================
+   FONTS
+   (local files from /Fonts, per the style guide)
+============================== */
+
+@font-face {
+    font-family: "Bodoni Moda";
+    src: url("../Fonts/Bodoni_Moda/BodoniModa-VariableFont_opsz,wght.ttf") format("truetype-variations"),
+         url("../Fonts/Bodoni_Moda/BodoniModa-VariableFont_opsz,wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Bodoni Moda";
+    src: url("../Fonts/Bodoni_Moda/BodoniModa-Italic-VariableFont_opsz,wght.ttf") format("truetype-variations"),
+         url("../Fonts/Bodoni_Moda/BodoniModa-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Henny Penny";
+    src: url("../Fonts/Henny-Penny/HennyPenny-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("../Fonts/open-sans/OpenSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("../Fonts/open-sans/OpenSans-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("../Fonts/open-sans/OpenSans-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("../Fonts/open-sans/OpenSans-LightItalic.ttf") format("truetype");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("../Fonts/open-sans/OpenSans-Semibold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("../Fonts/open-sans/OpenSans-SemiboldItalic.ttf") format("truetype");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==============================
+   TYPOGRAPHY
+============================== */
+
+h1, h2, h3, h4, .display-4 {
+    font-family: "Bodoni Moda", Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    color: var(--splash-navy);
+}
+
+.decorative {
+    font-family: "Henny Penny", cursive;
+}
+
+a {
+    color: var(--splash-accent);
+}
+
+a:hover {
+    color: var(--splash-accent-hover);
+}
+
+
+/* ==============================
+   BUTTONS
+   (skins Bootstrap's .btn-primary so every existing
+   "btn btn-primary" on every page picks up the brand look)
+============================== */
+
+.btn-primary,
+.btn-splash-primary {
+    background-color: var(--splash-accent);
+    border-color: var(--splash-accent);
+    border-radius: 999px;
+    padding: 10px 28px;
+    font-weight: 600;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-splash-primary:hover {
+    background-color: var(--splash-accent-hover);
+    border-color: var(--splash-accent-hover);
+}
+
+.btn-outline-primary,
+.btn-splash-outline {
+    color: var(--splash-accent);
+    border: 1px solid var(--splash-accent);
+    border-radius: 999px;
+    padding: 10px 28px;
+    font-weight: 600;
+    background: transparent;
+}
+
+.btn-outline-primary:hover,
+.btn-splash-outline:hover {
+    background-color: var(--splash-accent);
+    color: var(--splash-white);
+}
+
+
+/* ==============================
+   HEADER  (shared across every page)
+============================== */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(26, 46, 56, 0.97);
+}
+
+.header-container {
+    width: 100%;
+    min-height: 92px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 45px;
+}
+
+.logo-link {
+    display: block;
+    flex-shrink: 0;
+}
+
+.header-logo {
+    width: 265px;
+    max-height: 75px;
+    object-fit: contain;
+}
+
+
+/* ==============================
+   DESKTOP NAV
+============================== */
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 28px;
+}
+
+.desktop-nav a {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a[aria-current="page"] {
+    color: var(--splash-accent);
+}
+
+.register-button {
+    padding: 12px 23px;
+    border-radius: 26px;
+    background: #ffffff;
+    color: var(--splash-accent-hover) !important;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.register-button:hover {
+    background: var(--splash-accent-hover);
+    color: #ffffff !important;
+}
+
+
+/* ==============================
+   HAMBURGER
+============================== */
+
+.menu-button {
+    display: none;
+
+    padding: 8px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.menu-button span {
+    display: block;
+
+    width: 29px;
+    height: 3px;
+
+    margin: 6px 0;
+
+    background: #ffffff;
+}
+
+
+/* ==============================
+   MOBILE NAV
+============================== */
+
+.mobile-nav {
+    display: none;
+
+    width: 100%;
+
+    padding: 8px 25px 20px;
+
+    background: #243d49;
+}
+
+.mobile-nav.open {
+    display: block;
+}
+
+.mobile-nav a,
+.mobile-nav button {
+    display: block;
+    width: 100%;
+
+    padding: 10px;
+
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    background: transparent;
+    color: #ffffff;
+    text-align: left;
+    font-family: inherit;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.mobile-nav a:hover,
+.mobile-nav button:hover,
+.mobile-nav a[aria-current="page"] {
+    color: var(--splash-accent);
+}
+
+
+/* ==============================
+   GENERIC PAGE HERO
+   (for pages using a plain title hero instead of an image hero)
+============================== */
+
+.page-hero {
+    padding: 70px 20px;
+    text-align: center;
+    background: var(--splash-offwhite);
+}
+
+.page-hero .lead {
+    color: var(--splash-darkgray);
+    font-size: 18px;
+}
+
+.image-hero {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+}
+
+.image-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.image-hero .hero-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(26, 46, 56, 0.35);
+}
+
+.image-hero .hero-overlay h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 52px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ==============================
+   TABLES
+============================== */
+
+.table thead {
+    background: var(--splash-navy);
+    color: #ffffff;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--splash-offwhite);
+}
+
+
+/* ==============================
+   FORM ELEMENTS
+============================== */
+
+.form-control {
+    border-radius: 8px;
+    background: var(--splash-offwhite);
+    border: 1px solid var(--splash-offwhite);
+}
+
+.form-control:focus {
+    background: #ffffff;
+    border-color: var(--splash-accent);
+    box-shadow: 0 0 0 0.15rem rgba(3, 177, 244, 0.25);
+}
+
+.required-asterisk {
+    color: #d71935;
+}
+
+
+/* ==============================
+   SIGN IN / REGISTER MODAL
+============================== */
+
+#signinModal .modal-dialog {
+    max-width: 480px;
+}
+
+#signinModal .modal-content {
+    border: none;
+    border-radius: 4px;
+    padding: 40px 35px 30px;
+    position: relative;
+    overflow: visible;
+}
+
+#signinModal .modal-mascot {
+    position: absolute;
+    top: -55px;
+    left: -40px;
+    width: 110px;
+    display: none;
+}
+
+@media (min-width: 480px) {
+    #signinModal .modal-mascot {
+        display: block;
+    }
+}
+
+#signinModal h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+#signinModal label {
+    color: #d71935;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#signinModal .modal-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#signinModal .modal-actions .btn {
+    flex: 1;
+}
+
+#signinModal .forgot-password {
+    display: block;
+    text-align: right;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+
+/* ==============================
+   BACK TO TOP BUTTON (injected by js/main.js)
+============================== */
+
+#backToTop {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: var(--splash-accent);
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+#backToTop:hover {
+    background: var(--splash-accent-hover);
+}
+
+
+/* ==============================
+   FOOTER  (shared across every page)
+============================== */
+
+.site-footer {
+    padding: 65px 60px 50px;
+
+    background:
+        linear-gradient(
+            rgba(241, 243, 244, 0.88),
+            rgba(241, 243, 244, 0.88)
+        ),
+        url("../images/footer-bg.jpeg");
+
+    background-position: center;
+    background-size: cover;
+}
+
+.footer-wrapper {
+    width: 100%;
+    max-width: 1440px;
+
+    margin: 0 auto;
+}
+
+.footer-logo-container {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 60px;
+}
+
+.footer-logo {
+    width: 260px;
+}
+
+.footer-navigation-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.footer-links a {
+    color: #333333;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: underline;
+}
+
+.footer-links a:hover {
+    color: var(--splash-accent);
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-links a {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    text-decoration: none;
+}
+
+.linkedin { background: #0476a8; }
+.instagram { background: #666666; }
+.twitter { background: #2bc5de; }
+.yelp { background: #d71935; }
+.facebook { background: #6da7ec; }
+.youtube { background: #d7192d; }
+
+.social-links a:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.site-footer hr {
+    margin: 38px 0;
+
+    border: none;
+    border-top: 1px solid rgba(80, 80, 80, 0.20);
+}
+
+.footer-locations {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 30px;
+}
+
+.footer-location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    line-height: 1.7;
+    text-align: center;
+}
+
+.footer-location strong {
+    font-size: 14px;
+}
+
+.footer-location a {
+    color: #444444;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 35px;
+}
+
+.sponsor-logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.sponsor-logos img {
+    width: auto;
+    height: 78px;
+
+    object-fit: contain;
+}
+
+.copyright {
+    color: #444444;
+
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: right;
+}
+
+.copyright p {
+    margin: 3px 0;
+}
+
+
+/* ==============================================================
+   RESPONSIVE BREAKPOINTS
+   (matches the mockup breakpoints: 1200andup / 577-1199 / 576andbelow)
+============================================================== */
+
+/* ---- 577px - 1199px (tablet) ---- */
+@media screen and (max-width: 1199px) {
+
+    .header-container {
+        min-height: 88px;
+        padding: 10px 28px;
+    }
+
+    .header-logo {
+        width: 230px;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .image-hero {
+        height: 300px;
+    }
+
+    .image-hero .hero-overlay h1 {
+        font-size: 40px;
+    }
+
+    .footer-navigation-row {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-locations {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sponsor-logos {
+        justify-content: center;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+}
+
+/* ---- 576px and below (mobile) ---- */
+@media screen and (max-width: 576px) {
+
+    .header-container {
+        min-height: 68px;
+        padding: 8px 15px;
+    }
+
+    .header-logo {
+        width: 145px;
+    }
+
+    .menu-button span {
+        width: 23px;
+        height: 2px;
+        margin: 5px 0;
+    }
+
+    .image-hero {
+        height: 180px;
+    }
+
+    .image-hero .hero-overlay h1 {
+        font-size: 26px;
+    }
+
+    .site-footer {
+        padding: 40px 15px 35px;
+    }
+
+    .footer-logo-container {
+        margin-bottom: 30px;
+    }
+
+    .footer-logo {
+        width: 155px;
+    }
+
+    .footer-links {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .footer-links a {
+        font-size: 9px;
+    }
+
+    .social-links a {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .footer-locations {
+        gap: 22px;
+    }
+
+    .footer-location strong,
+    .footer-location a {
+        font-size: 10px;
+    }
+
+    .sponsor-logos {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .sponsor-logos img {
+        height: 45px;
+    }
+
+    .copyright {
+        font-size: 10px;
+    }
+}

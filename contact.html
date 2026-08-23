@@ -24,7 +24,10 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     >
 
-    <!-- Custom CSS -->
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Contact-page-only CSS -->
     <link rel="stylesheet" href="css/contact.css">
 </head>
 
@@ -49,7 +52,7 @@
 
                 <a href="about.html">About</a>
 
-                <a href="swimming-lessons.html">
+                <a href="swim-lessons.html">
                     Swimming Lessons
                 </a>
 
@@ -57,7 +60,7 @@
                     Swim Programs
                 </a>
 
-                <a href="adult-programs.html">
+                <a href="adult-program.html">
                     Adult Programs
                 </a>
 
@@ -65,13 +68,15 @@
                     Locations
                 </a>
 
-                <a href="contact.html">
+                <a href="contact.html" aria-current="page">
                     Contact Us
                 </a>
 
                 <a
-                    href="signin.html"
+                    href="#"
                     class="register-button"
+                    data-toggle="modal"
+                    data-target="#signinModal"
                 >
                     Register / Sign In
                 </a>
@@ -100,12 +105,12 @@
         >
 
             <a href="about.html">About</a>
-            <a href="swimming-lessons.html">Swimming Lessons</a>
+            <a href="swim-lessons.html">Swimming Lessons</a>
             <a href="swim-programs.html">Swim Programs</a>
-            <a href="adult-programs.html">Adult Programs</a>
+            <a href="adult-program.html">Adult Programs</a>
             <a href="locations.html">Locations</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="signin.html">Register / Sign In</a>
+            <a href="contact.html" aria-current="page">Contact Us</a>
+            <a href="#" data-toggle="modal" data-target="#signinModal">Register / Sign In</a>
 
         </nav>
 
@@ -326,7 +331,7 @@
                         <a href="locations.html">Locations</a>
                         <a href="#">FAQs</a>
                         <a href="contact.html">Contact</a>
-                        <a href="signin.html">Register / Sign In</a>
+                        <a href="#" data-toggle="modal" data-target="#signinModal">Register / Sign In</a>
                         <a href="#">Careers</a>
                     </nav>
 
@@ -426,7 +431,7 @@
                     </div>
 
                     <div class="copyright">
-                        <p>&copy; 2022 Splashes.</p>
+                        <p>&copy; 2026 Splashes.</p>
                         <p>All Rights Reserved</p>
                     </div>
 
@@ -439,14 +444,55 @@
     </main>
 
 
-    <!-- jQuery -->
+    <!-- =========================
+         SIGN IN / REGISTER MODAL
+    ========================== -->
+    <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position:absolute; top:10px; right:16px; z-index:2;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <img src="Graphics/shark-full.png" alt="" class="modal-mascot">
+
+                <h2 id="signinModalLabel">Sign In</h2>
+
+                <form id="signinForm">
+
+                    <div class="form-group">
+                        <label for="modalEmail">Email <span class="required-asterisk">*</span></label>
+                        <input type="email" class="form-control" id="modalEmail" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modalPassword">Password <span class="required-asterisk">*</span></label>
+                        <input type="password" class="form-control" id="modalPassword" placeholder="Enter your password" required>
+                    </div>
+
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+
+                    <div class="modal-actions">
+                        <button type="submit" class="btn btn-splash-outline">Sign In</button>
+                        <a href="signin.html" class="btn btn-splash-primary text-center">Sign Up</a>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery (full build — required for the $.getJSON Ajax feature) -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom JavaScript -->
-    <script src="js/contact.js"></script>
+    <!-- Shared site JavaScript -->
+    <script src="js/main.js"></script>
 
 </body>
 </html>
