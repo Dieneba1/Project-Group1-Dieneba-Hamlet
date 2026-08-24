@@ -92,7 +92,6 @@ Screenshots/            reference screenshots of the finished site
 - Review the body content of about.html, locations.html, swim-lessons.html, swim-programs.html, and adult-program.html against each page's individual mockup for closer visual alignment, since this update focused on shared branding, navigation, and the technical requirements rather than a full rebuild of every section.
 - Test the site across Chrome, Safari, Firefox, and Edge, and on the standard responsive breakpoints, per the client's testing requirement.
 - Do a final visual walkthrough of every page in a browser before the site goes live.
-- Establish a simple process for updating data/schedule.json going forward so class times stay current without editing page code.
 - Commit and push the updated files to the team GitHub repository, then submit the repository URL as required.
 
 Prepared by Group 1 for Dr. Wissam Ahmed and the Splashes team.
